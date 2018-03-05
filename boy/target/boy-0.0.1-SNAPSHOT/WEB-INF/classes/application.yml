@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: prod 
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8   
+#日志配置    
+logging:
+  level:
+     root: INFO        
+     com.imooc.controller: DEBUG                             
+  path: C:\\work\\demo
+
+#security:
+#  user:
+#     name: admin
+#     password: admin
+#imooc.security:
+#  browserProperties:
+#     loginPage: /demo-sign.html
+  

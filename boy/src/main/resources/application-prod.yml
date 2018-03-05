@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/dbgril?useUnicode=true&characterEncoding=gbk&serverTimezone=Hongkong
+    username: root 
+    password: 123456
+  jpa:
+    hibernate:
+     ddl-auto: update  
+    show-sql: true
+    
+server:
+  port: 8090
+cubSize: F
+age: 2100272041

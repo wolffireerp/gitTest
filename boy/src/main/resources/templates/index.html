@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>My WebSocket</title>
+</head>
+
+<body>
+Welcomeqweqw<br/>
+<input id="text" type="text"/>
+<button onclick="send()">Send</button>
+<button onclick="closeWebSocket()">Close</button>
+<div id="message">
+</div>
+</body>
+<script type="text/javascript">
+ 
+    var websocket = new WebSocket("ws://localhost:8089/websocket");
+    
+    //连接发生错误的回调方法
+    websocket.onerror = function () {
+    	console.log('error')
+       
+    };
+
+    //连接成功建立的回调方法
+    websocket.onopen = function (event) {
+    	console.log('success')
+        
+    }
+
+
+
+    //将消息显示在网页上
+    function setMessageInnerHTML(innerHTML) {
+        document.getElementById('message').innerHTML += innerHTML + '<br/>';
+    }
+
+    //关闭连接
+    function closeWebSocket() {
+        websocket.close();
+    }
+
+    //发送消息
+    function send() {
+        var message = document.getElementById('text').value;
+        websocket.send(message);
+    }
+</script>
+</html>
